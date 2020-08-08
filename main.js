@@ -55,12 +55,19 @@ function render(){
         let isRead = document.createElement("div");
 
         title.innerHTML = myLibrary[i].title;
+        title.classList.add("title");
+
         author.innerHTML = myLibrary[i].author;
+        author.classList.add("author");
+
         pages.innerHTML = myLibrary[i].pages;
-        
+        pages.classList.add("pages");
+
+        isRead.classList.add("circle");
         isRead.classList.add("unread");
         if (myLibrary[i].isRead) {
-            isRead.classList = "read";
+            isRead.classList.add("read");
+            isRead.classList.remove("unread");
         }
 
         book.dataset.indexNumber = i;
