@@ -45,5 +45,31 @@ myLibrary.push(it);
  *     the element for the card will need a "data-index-number" attribute corresponding
  *     to the array index. 
  */
+function render(){
+    let library = document.getElementById("library");
+    for(let i=0; i<myLibrary.length; i++){
+        let book = document.createElement("div");
+        let title = document.createElement("h2");
+        let author = document.createElement("p");
+        let pages = document.createElement("p");
+        let isRead = document.createElement("div");
 
- 
+        title.innerHTML = myLibrary[i].title;
+        author.innerHTML = myLibrary[i].author;
+        pages.innerHTML = myLibrary[i].pages;
+        
+        isRead.classList.add("unread");
+        if (myLibrary[i].isRead) {
+            isRead.classList = "read";
+        }
+
+        book.dataset.indexNumber = i;
+        book.classList.add("book");
+        [title, author, pages, isRead].forEach(element => book.appendChild(element));
+
+        library.appendChild(book);
+        console.log("book added");
+    }
+}
+
+render();
