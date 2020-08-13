@@ -1,9 +1,25 @@
 <!DOCTYPE html>
     <head>
-        <script src="main.js" defer></script>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
-        
+        <div class="container">
+            <div class="header"><h1>Welcome to the library!</h1></div>
+            <div id="library" class="library"></div>
+            <div class="footer">
+                <form id="add" class="book-form">
+                    <input type="text" id="new-title" name="new-title" placeholder="Book title" ><br>
+                    <input type="text" id="new-author" name="new-author" placeholder="Author"><br>
+                    <input type="text" id="new-pages" name="new-pages" placeholder="Page count"><br>
+                    <div class="read-check">
+                        <label for="new-read">Read</label>
+                        <input type="checkbox" id="new-read" name="new-read" class="radio-btn" name="finished">
+                    </div>
+                    <input type="button" id="add-btn" value="Add Book">
+                </form>
+            </div>
+        </div>
+
+    <script src="main.js"></script>
     </body>
 </html>
